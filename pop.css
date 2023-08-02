@@ -1,0 +1,59 @@
+.pop{
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    border-radius: 15px;
+    position: absolute;
+    top: 0%;
+    left: 54%;
+    transform: translate(-50%,-50%) scale(0.0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    column-gap: 15px;
+    visibility: hidden;
+    transition: transform ease-in-out 0.4s, top 0.4s;
+  }
+  .open-pop{
+    top: 50%;
+    visibility: visible;
+    transform: translate(-50%,-50%)scale(1);
+    transition: transform ease-in-out 0.4s, top 0.4s;
+  }
+  .ok{
+    border-radius: 50px;
+    color: aliceblue;
+    background-color: black;
+    width:auto;
+    padding: 10px 60px;
+    margin: 2%;
+    font-size: 15px;
+    font-weight: 500;
+    border: none;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+  }
+
+  <div class="pop" id="pop">    
+        <a class="prolink" href="https://bit.ly/ChatRt">
+            <object data="pro1.svg" type="image/svg+xml">
+                <img src="facs/Group 55.svg" />
+            </object>
+        </a>
+        <a class="prolink" href="https://quotesf5.herokuapp.com/">
+            <object data="pro2.svg" type="image/svg+xml">
+                <img src="facs/Group 56.svg" />
+            </object>
+        </a>
+        <button class="ok" onclick="closePop()">Close</button>
+    </div>
+
+    let pop=document.getElementById("pop");
+    function openPop(){
+        pop.classList.add("open-pop");
+    }
+    function closePop(){
+        pop.classList.remove("open-pop")
+    }
